@@ -52,7 +52,7 @@ export const BirthdayCafeScene: React.FC<BirthdayCafeSceneProps> = () => {
       subtitle: 'Double Scoop Gelato',
       price: 250,
       tag: 'Must Have',
-      image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80',
+      image: '/img/kai-double-gelato.jpg',
       desc: 'Calories temporarily suspended by birthday law.',
     },
     {
