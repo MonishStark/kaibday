@@ -25,7 +25,7 @@ export function App() {
   const totalChapters = 14;
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Bind audio element to soundFx engine
+  // Initialize soundFx audio binding
   useEffect(() => {
     soundFx.initAudioElement();
   }, []);
@@ -102,7 +102,7 @@ export function App() {
       {/* 14 Chapters */}
       <main>
         <div id="chapter-1">
-          <IntroScene onNext={handleNext} />
+          <IntroScene onNext={handleNext} isActive={!showModal} />
         </div>
 
         <div id="chapter-2">

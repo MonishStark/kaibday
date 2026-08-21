@@ -5,14 +5,18 @@ import { soundFx } from '../../utils/sound';
 
 interface IntroSceneProps {
   onNext: () => void;
+  isActive?: boolean;
 }
 
-export const IntroScene: React.FC<IntroSceneProps> = ({ onNext }) => {
+export const IntroScene: React.FC<IntroSceneProps> = ({ onNext, isActive = true }) => {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
-    // Attempt song start immediately on scene load!
-    soundFx.playBirthdaySong();
+    // Only start sunrise animation timers once the card modal is opened!
+    if (!isActive) {
+      setStep(0);
+      return;
+    }
 
     const timer1 = setTimeout(() => setStep(1), 1000); // "Good morning, Kai."
     const timer2 = setTimeout(() => setStep(2), 2600); // "Yes... I know you wake up at 5 AM."
@@ -27,7 +31,7 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onNext }) => {
       clearTimeout(timer4);
       clearTimeout(timer5);
     };
-  }, []);
+  }, [isActive]);
 
   const handleUserInteraction = () => {
     soundFx.unlockAudio();

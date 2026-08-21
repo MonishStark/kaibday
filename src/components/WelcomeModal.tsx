@@ -65,7 +65,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
         </div>
 
         {/* Action Button to Open Card & Play Song */}
-        <div className="pt-3">
+        <div className="pt-2">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
@@ -75,10 +75,6 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
             <span>Open Birthday Card 💌</span>
           </motion.button>
         </div>
-
-        <p className="text-[11px] font-mono text-slate-400 pt-1">
-          ✨ Includes music & interactive memories
-        </p>
 
       </motion.div>
     </motion.div>
