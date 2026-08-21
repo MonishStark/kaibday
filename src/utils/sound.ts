@@ -14,74 +14,38 @@ class SoundManager {
 
   constructor() {
     if (typeof window !== 'undefined') {
-      this.songAudio = new Audio('/song/Happy Birthday, Kai.mp3');
-      this.songAudio.preload = 'auto';
-
-      this.songAudio.addEventListener('ended', () => {
-        this.isSongPlaying = false;
-        this.songEndCallbacks.forEach(cb => cb());
-      });
-
-      this.songAudio.addEventListener('timeupdate', () => {
-        if (this.songAudio) {
-          const t = this.songAudio.currentTime;
-          this.timeUpdateCallbacks.forEach(cb => cb(t));
-        }
-      });
-
-      // Muted Autoplay on Page Load (100% allowed by Chrome & Safari policies!)
-      this.startMutedAutoplay();
-
-      // Unmute & enable WebAudio on ANY user gesture (touch, scroll, click, tap)
-      const unmuteOnFirstGesture = () => {
-        this.unmuteAndPlay();
-      };
-
-      ['pointerdown', 'touchstart', 'click', 'scroll', 'wheel', 'keydown'].forEach(evtName => {
-        window.addEventListener(evtName, unmuteOnFirstGesture, { passive: true, capture: true });
-      });
+      this.initAudioElement();
     }
   }
 
-  // Muted autoplay runs immediately on page mount (passes browser security checks)
-  private startMutedAutoplay() {
-    if (!this.songAudio) return;
-    this.songAudio.muted = true;
-    const p = this.songAudio.play();
-    if (p !== undefined) {
-      p.then(() => {
-        this.isSongPlaying = true;
-      }).catch(err => {
-        console.warn('Muted autoplay notice:', err);
-      });
-    }
-  }
+  public initAudioElement() {
+    if (this.songAudio) return;
 
-  // Unmute audio as soon as user touches or scrolls
-  public unmuteAndPlay() {
-    this.initCtx();
-    if (this.songAudio) {
-      if (this.isMuted) {
-        this.songAudio.muted = true;
-      } else {
-        this.songAudio.muted = false;
+    let el = document.getElementById('kai-birthday-song-audio') as HTMLAudioElement;
+    if (!el) {
+      el = new Audio('/song/Happy Birthday, Kai.mp3');
+      el.id = 'kai-birthday-song-audio';
+      el.preload = 'auto';
+      el.setAttribute('playsinline', 'true');
+      el.setAttribute('autoplay', 'true');
+    }
+
+    this.songAudio = el;
+
+    this.songAudio.addEventListener('ended', () => {
+      this.isSongPlaying = false;
+      this.songEndCallbacks.forEach(cb => cb());
+    });
+
+    this.songAudio.addEventListener('timeupdate', () => {
+      if (this.songAudio) {
+        const t = this.songAudio.currentTime;
+        this.timeUpdateCallbacks.forEach(cb => cb(t));
       }
+    });
 
-      if (this.songAudio.paused) {
-        const p = this.songAudio.play();
-        if (p !== undefined) {
-          p.then(() => {
-            this.isSongPlaying = true;
-          }).catch(() => {});
-        }
-      } else {
-        this.isSongPlaying = true;
-      }
-    }
-  }
-
-  public unlockAudio() {
-    this.unmuteAndPlay();
+    // Attempt instant unmuted play immediately
+    this.playBirthdaySong();
   }
 
   private initCtx() {
@@ -106,25 +70,25 @@ class SoundManager {
     return this.isMuted;
   }
 
-  // Play Birthday Song
+  // Play Birthday Song immediately
   public playBirthdaySong() {
     if (!this.songAudio) return;
     this.stopBGM();
     this.initCtx();
 
-    if (this.isMuted) {
-      this.songAudio.muted = true;
-    } else {
-      this.songAudio.muted = false;
-    }
-
+    this.songAudio.muted = this.isMuted;
     const playPromise = this.songAudio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         this.isSongPlaying = true;
-      }).catch(() => {
-        // Fallback: start muted if unmuted was blocked by browser
-        this.startMutedAutoplay();
+      }).catch((err) => {
+        console.warn('Initial autoplay notice:', err);
+        // Fallback: retry with play() immediately
+        if (this.songAudio) {
+          this.songAudio.play().then(() => {
+            this.isSongPlaying = true;
+          }).catch(() => {});
+        }
       });
     }
   }
@@ -142,7 +106,11 @@ class SoundManager {
       playPromise.then(() => {
         this.isSongPlaying = true;
       }).catch(() => {
-        this.startMutedAutoplay();
+        if (this.songAudio) {
+          this.songAudio.play().then(() => {
+            this.isSongPlaying = true;
+          }).catch(() => {});
+        }
       });
     }
   }

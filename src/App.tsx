@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
 import { soundFx } from './utils/sound';
@@ -20,10 +20,16 @@ import { FinalNightScene } from './components/scenes/14_FinalNightScene';
 export function App() {
   const [currentChapter, setCurrentChapter] = useState(1);
   const totalChapters = 14;
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Immediately play birthday song on page mount!
+  // Initialize soundFx and attempt immediate playback on page mount!
   useEffect(() => {
-    soundFx.playBirthdaySong();
+    soundFx.initAudioElement();
+    if (audioRef.current) {
+      audioRef.current.play().catch((err) => {
+        console.warn('DOM Audio Autoplay notice:', err);
+      });
+    }
   }, []);
 
   const scrollToChapter = (chapterNum: number) => {
@@ -69,6 +75,18 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
+      
+      {/* Native HTML Audio Element for React DOM AutoPlay */}
+      <audio
+        ref={audioRef}
+        id="kai-birthday-song-audio"
+        src="/song/Happy Birthday, Kai.mp3"
+        autoPlay
+        playsInline
+        preload="auto"
+        className="hidden"
+      />
+
       {/* Synchronized Cinematic Lyrics Overlay */}
       <CinematicLyrics currentChapter={currentChapter} />
 
