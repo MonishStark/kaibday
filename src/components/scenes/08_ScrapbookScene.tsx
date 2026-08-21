@@ -74,7 +74,7 @@ export const ScrapbookScene: React.FC<ScrapbookSceneProps> = () => {
             </h2>
 
             <p className="text-sm sm:text-base text-kai-muted italic font-serif">
-              Tap any photograph to take a closer look ✨
+              Due to pic shortage. Repeated pics are used.😅
             </p>
           </div>
         </ScrollReveal>
