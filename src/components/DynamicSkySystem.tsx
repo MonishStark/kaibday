@@ -2,14 +2,14 @@ import React, { useEffect, useRef } from 'react';
 
 // Exact 8 Keyframe Stops for Orb from Specification
 const STOPS = [
-  { t: 0.00, orb: '#FFD8A0', glow: 'rgba(255,216,160,0.55)', shadow: '0 0 46px 8px rgba(255,200,140,0.55)', top: 14 },
-  { t: 0.16, orb: '#FFEFC2', glow: 'rgba(255,239,194,0.55)', shadow: '0 0 44px 6px rgba(255,236,180,0.55)', top: 9  },
+  { t: 0.00, orb: '#FFD8A0', glow: 'rgba(255,216,160,0.55)', shadow: '0 0 46px 8px rgba(255,200,140,0.55)', top: 12 },
+  { t: 0.16, orb: '#FFEFC2', glow: 'rgba(255,239,194,0.55)', shadow: '0 0 44px 6px rgba(255,236,180,0.55)', top: 8  },
   { t: 0.34, orb: '#FFF7DE', glow: 'rgba(255,247,222,0.6)',  shadow: '0 0 36px 4px rgba(255,247,222,0.7)', top: 5  },
   { t: 0.50, orb: '#FFF7DE', glow: 'rgba(255,247,222,0.6)',  shadow: '0 0 36px 4px rgba(255,247,222,0.7)', top: 6  },
-  { t: 0.62, orb: '#FFD97E', glow: 'rgba(255,217,126,0.55)', shadow: '0 0 42px 6px rgba(255,190,110,0.55)', top: 10 },
-  { t: 0.74, orb: '#FF9A56', glow: 'rgba(255,154,86,0.6)',   shadow: '0 0 48px 10px rgba(255,120,70,0.6)', top: 18 },
-  { t: 0.86, orb: '#FF6E52', glow: 'rgba(255,110,82,0.45)',  shadow: '0 0 40px 8px rgba(255,90,70,0.4)',   top: 26 },
-  { t: 1.00, orb: '#E9ECF4', glow: 'rgba(233,236,244,0.35)', shadow: '0 0 30px 6px rgba(210,220,255,0.45)', top: 9  }
+  { t: 0.62, orb: '#FFD97E', glow: 'rgba(255,217,126,0.55)', shadow: '0 0 42px 6px rgba(255,190,110,0.55)', top: 9  },
+  { t: 0.74, orb: '#FF9A56', glow: 'rgba(255,154,86,0.6)',   shadow: '0 0 48px 10px rgba(255,120,70,0.6)', top: 16 },
+  { t: 0.86, orb: '#FF6E52', glow: 'rgba(255,110,82,0.45)',  shadow: '0 0 40px 8px rgba(255,90,70,0.4)',   top: 22 },
+  { t: 1.00, orb: '#E9ECF4', glow: 'rgba(233,236,244,0.35)', shadow: '0 0 30px 6px rgba(210,220,255,0.45)', top: 8  }
 ];
 
 function lerp(a: number, b: number, f: number) {
@@ -108,14 +108,14 @@ export const DynamicSkySystem: React.FC = () => {
 
   return (
     <>
-      {/* Fixed Sun/Moon Celestial Orb in Top Right */}
+      {/* Fixed Sun/Moon Celestial Orb (Scaled compact and aligned to top right margin) */}
       <div
         id="orb-wrap"
         ref={orbWrapRef}
-        className="fixed top-[6%] right-[8%] z-[30] w-[140px] h-[140px] max-sm:w-[88px] max-sm:h-[88px] max-sm:top-[4%] max-sm:right-[6%] pointer-events-none transition-[top] duration-200 ease-out select-none"
+        className="fixed top-[6%] right-[4%] max-sm:right-[3%] z-[30] w-[90px] h-[90px] max-sm:w-[64px] max-sm:h-[64px] pointer-events-none transition-[top] duration-200 ease-out select-none"
       >
-        <div id="orb-glow" ref={glowRef} className="absolute inset-[-70px] max-sm:inset-[-44px] rounded-full transition-[background] duration-150 ease-linear" />
-        <div id="orb" ref={orbRef} className="absolute inset-[20px] max-sm:inset-[14px] rounded-full transition-[background,box-shadow] duration-150 ease-linear">
+        <div id="orb-glow" ref={glowRef} className="absolute inset-[-45px] max-sm:inset-[-30px] rounded-full transition-[background] duration-150 ease-linear" />
+        <div id="orb" ref={orbRef} className="absolute inset-[14px] max-sm:inset-[10px] rounded-full transition-[background,box-shadow] duration-150 ease-linear">
           {/* Moon craters pseudo-element via CSS */}
         </div>
       </div>
