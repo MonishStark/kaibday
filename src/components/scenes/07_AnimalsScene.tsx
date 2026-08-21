@@ -90,7 +90,21 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
                 </div>
                 <div className="flex gap-1 text-rose-400">
                   {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 fill-rose-400 text-rose-400" />
+                    <motion.div
+                      key={i}
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: [0, 1.4, 1], opacity: 1 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{
+                        delay: 0.4 + i * 0.12,
+                        duration: 0.4,
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 15,
+                      }}
+                    >
+                      <Heart className="w-5 h-5 fill-rose-400 text-rose-400" />
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -105,7 +119,21 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
                 </div>
                 <div className="flex gap-1 text-amber-400">
                   {[...Array(5)].map((_, i) => (
-                    <Heart key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    <motion.div
+                      key={i}
+                      initial={{ scale: 0, opacity: 0 }}
+                      whileInView={{ scale: [0, 1.4, 1], opacity: 1 }}
+                      viewport={{ once: true, amount: 0.5 }}
+                      transition={{
+                        delay: 0.9 + i * 0.12,
+                        duration: 0.4,
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 15,
+                      }}
+                    >
+                      <Heart className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -151,7 +179,6 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
             <p className="text-base sm:text-lg font-serif italic text-amber-950">
               "I hope the dream of building an animal shelter comes true soooon...."
             </p>
-            
           </div>
         </ScrollReveal>
 
