@@ -42,7 +42,7 @@ export const BirthdayCafeScene: React.FC<BirthdayCafeSceneProps> = () => {
       subtitle: 'Strawberry Velvet Slice',
       price: 1250,
       tag: 'Mandatory',
-      image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80',
+      image: '/img/kai-strawberry-cake.jpg',
       desc: 'Mandatory on 20 August.',
     },
     {
