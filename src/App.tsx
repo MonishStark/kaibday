@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
+import { WelcomeModal } from './components/WelcomeModal';
 import { soundFx } from './utils/sound';
 import { IntroScene } from './components/scenes/01_IntroScene';
 import { CoffeeScene } from './components/scenes/02_CoffeeScene';
@@ -16,21 +17,23 @@ import { FriendshipScene } from './components/scenes/11_FriendshipScene';
 import { LetterScene } from './components/scenes/12_LetterScene';
 import { WishScene } from './components/scenes/13_WishScene';
 import { FinalNightScene } from './components/scenes/14_FinalNightScene';
+import { AnimatePresence } from 'framer-motion';
 
 export function App() {
+  const [showModal, setShowModal] = useState(true);
   const [currentChapter, setCurrentChapter] = useState(1);
   const totalChapters = 14;
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Initialize soundFx and attempt immediate playback on page mount!
+  // Bind audio element to soundFx engine
   useEffect(() => {
     soundFx.initAudioElement();
-    if (audioRef.current) {
-      audioRef.current.play().catch((err) => {
-        console.warn('DOM Audio Autoplay notice:', err);
-      });
-    }
   }, []);
+
+  const handleOpenCard = () => {
+    setShowModal(false);
+    soundFx.restartBirthdaySong();
+  };
 
   const scrollToChapter = (chapterNum: number) => {
     setCurrentChapter(chapterNum);
@@ -76,13 +79,16 @@ export function App() {
   return (
     <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
       
-      {/* Native HTML Audio Element for React DOM AutoPlay */}
+      {/* Welcome Envelope Modal */}
+      <AnimatePresence>
+        {showModal && <WelcomeModal onOpen={handleOpenCard} />}
+      </AnimatePresence>
+
+      {/* Native HTML Audio Element for React DOM Playback */}
       <audio
         ref={audioRef}
         id="kai-birthday-song-audio"
         src="/song/Happy Birthday, Kai.mp3"
-        autoPlay
-        playsInline
         preload="auto"
         className="hidden"
       />
