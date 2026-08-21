@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
+import { CelestialOrb } from './components/CelestialOrb';
 import { WelcomeModal } from './components/WelcomeModal';
 import { soundFx } from './utils/sound';
 import { IntroScene } from './components/scenes/01_IntroScene';
@@ -81,6 +82,9 @@ export function App() {
     <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
       {/* Vercel Analytics */}
       <Analytics />
+
+      {/* Fixed Sun-to-Moon Scroll-Interpolated Celestial Orb (Positioned in Top-Right Below Top Bar) */}
+      <CelestialOrb />
 
       {/* Welcome Envelope Modal */}
       <AnimatePresence>
