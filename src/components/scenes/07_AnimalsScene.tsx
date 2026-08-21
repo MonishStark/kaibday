@@ -13,12 +13,12 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
 
   const handleCatClick = () => {
     soundFx.playMeow();
-    setPetMessage('🐱 Meow! Kai is my favorite human!');
+    setPetMessage('🐱 Meow! Kai is my favorite hooman!');
   };
 
   const handleDogClick = () => {
     soundFx.playWoof();
-    setPetMessage('🐶 Woof! 100/10 good birthday girl!');
+    setPetMessage('🐶 Woof! The best pawson in the world!');
   };
 
   return (

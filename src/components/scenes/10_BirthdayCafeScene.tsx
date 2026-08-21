@@ -32,7 +32,7 @@ export const BirthdayCafeScene: React.FC<BirthdayCafeSceneProps> = () => {
       subtitle: 'Birthday Morning Fuel',
       price: 180,
       tag: 'Kai Essential',
-      image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80',
+      image: '/img/kai-black-coffee.jpg',
       desc: 'Morning protocol. No sugar. No negotiations.',
     },
     {
