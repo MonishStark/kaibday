@@ -44,10 +44,9 @@
 
 /* Subtle Paper Texture */
 .paper-texture {
-  background-color: #FFF9F0;
-  background-image: radial-gradient(#F3E7D3 0.75px, transparent 0.75px), radial-gradient(#F3E7D3 0.75px, #FFF9F0 0.75px);
+  background-color: transparent;
+  background-image: radial-gradient(#F3E7D3 0.75px, transparent 0.75px);
   background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
 }
 
 /* Polaroid Box Shadow & Style */
@@ -99,8 +98,44 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Celestial Orb Moon Craters (invisible until .night class is added) */
-.celestial-orb-inner .moon-craters {
+/* Fixed Sky, Stars, Clouds, and Sun/Moon Orb Styles */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #fff;
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+.cloud {
+  position: absolute;
+  filter: blur(0.2px);
+  animation: drift linear infinite;
+  opacity: 0.85;
+}
+
+.cloud svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes drift {
+  from { transform: translateX(-140px); }
+  to { transform: translateX(calc(100vw + 140px)); }
+}
+
+#orb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
   opacity: 0;
   background:
     radial-gradient(circle at 30% 30%, rgba(23,21,34,0.18) 0 8px, transparent 9px),
@@ -109,6 +144,6 @@
   transition: opacity 0.4s linear;
 }
 
-.celestial-orb-inner.night .moon-craters {
+#orb.night::after {
   opacity: 1;
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
-import { CelestialOrb } from './components/CelestialOrb';
+import { DynamicSkySystem } from './components/DynamicSkySystem';
 import { WelcomeModal } from './components/WelcomeModal';
 import { soundFx } from './utils/sound';
 import { IntroScene } from './components/scenes/01_IntroScene';
@@ -79,12 +79,12 @@ export function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
+    <div className="relative min-h-screen text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
       {/* Vercel Analytics */}
       <Analytics />
 
-      {/* Fixed Sun-to-Moon Scroll-Interpolated Celestial Orb (Positioned in Top-Right Below Top Bar) */}
-      <CelestialOrb />
+      {/* Complete Dynamic Sky, Stars, Clouds, and Sun-to-Moon Orb System */}
+      <DynamicSkySystem />
 
       {/* Welcome Envelope Modal */}
       <AnimatePresence>
@@ -107,7 +107,7 @@ export function App() {
       <Navbar currentChapter={currentChapter} totalChapters={totalChapters} />
 
       {/* 14 Chapters */}
-      <main>
+      <main className="relative z-10">
         <div id="chapter-1">
           <IntroScene onNext={handleNext} isActive={!showModal} />
         </div>
@@ -166,7 +166,7 @@ export function App() {
       </main>
 
       {/* Footer Signature */}
-      <footer className="py-6 bg-kai-navy border-t border-white/10 text-center text-xs font-mono text-amber-200/50">
+      <footer className="relative z-10 py-6 bg-kai-navy/90 backdrop-blur-md border-t border-white/10 text-center text-xs font-mono text-amber-200/60">
         Created for Kai with love & thoughtfulness • 20 August
       </footer>
     </div>
