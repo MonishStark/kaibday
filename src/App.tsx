@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
+import { CelestialIndicator } from './components/CelestialIndicator';
 import { WelcomeModal } from './components/WelcomeModal';
 import { soundFx } from './utils/sound';
 import { IntroScene } from './components/scenes/01_IntroScene';
@@ -81,6 +82,9 @@ export function App() {
     <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
       {/* Vercel Analytics */}
       <Analytics />
+
+      {/* Top Right Scroll-Driven Celestial Sun-to-Moon Indicator */}
+      <CelestialIndicator />
 
       {/* Welcome Envelope Modal */}
       <AnimatePresence>
