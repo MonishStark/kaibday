@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { CinematicLyrics } from './components/CinematicLyrics';
 import { WelcomeModal } from './components/WelcomeModal';
@@ -78,7 +79,9 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-kai-cream text-kai-charcoal font-sans selection:bg-kai-blush selection:text-kai-charcoal">
-      
+      {/* Vercel Analytics */}
+      <Analytics />
+
       {/* Welcome Envelope Modal */}
       <AnimatePresence>
         {showModal && <WelcomeModal onOpen={handleOpenCard} />}
