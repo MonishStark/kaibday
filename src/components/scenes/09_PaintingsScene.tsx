@@ -25,7 +25,7 @@ export const PaintingsScene: React.FC<PaintingsSceneProps> = () => {
       id: 'crescent',
       src: '/img/kai-painting-crescent-moon.jpg',
       title: 'Crescent Moon & Pines',
-      caption: '"The moon one. 🌙"',
+      caption: '"MY MOST FAVVVV. 🌙"',
       rotation: 'rotate-[-2deg]',
       featured: true,
     },
@@ -40,7 +40,7 @@ export const PaintingsScene: React.FC<PaintingsSceneProps> = () => {
       id: 'fullmoon',
       src: '/img/kai-painting-full-moon.jpg',
       title: 'Full Moon & Blossom Cliff',
-      caption: '"I think this one might be my favorite."',
+      caption: '"Gives the anime vibes.🌸"',
       rotation: 'rotate-[-1deg]',
     },
   ];
