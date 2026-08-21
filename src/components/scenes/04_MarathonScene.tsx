@@ -83,8 +83,7 @@ export const MarathonScene: React.FC<MarathonSceneProps> = () => {
                     <span className="flex items-center gap-1"><MapPin className="w-4 h-4" /> New Clark City Athletics Stadium</span>
                     <span>•</span>
                     <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> August 16, 2026</span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1 text-sky-300"><CloudRain className="w-4 h-4" /> Rained 20s Before Start!</span>
+            
                   </div>
 
                   <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight font-serif text-white">
@@ -111,9 +110,7 @@ export const MarathonScene: React.FC<MarathonSceneProps> = () => {
                     </div>
                   </div>
 
-                  <p className="text-xs font-mono text-emerald-200/90 italic">
-                    Group of ~15 runners • Estimated placement: ~50th–100th
-                  </p>
+                  
                 </div>
               </ScrollReveal>
 
@@ -132,7 +129,7 @@ export const MarathonScene: React.FC<MarathonSceneProps> = () => {
                       />
                     </div>
                     <p className="font-handwritten text-xl text-center mt-3 text-kai-charcoal">
-                      "Are You Ready?" — At the Stadium 🏟️
+                      The Champ
                     </p>
                   </motion.div>
                 </ScrollReveal>
@@ -153,7 +150,7 @@ export const MarathonScene: React.FC<MarathonSceneProps> = () => {
                       />
                     </div>
                     <p className="font-handwritten text-xl text-center mt-3 text-kai-charcoal font-bold">
-                      Finisher Banner & Medal 🏅
+                      Finisher🏅
                     </p>
                   </motion.div>
                 </ScrollReveal>

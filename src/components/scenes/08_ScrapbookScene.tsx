@@ -110,26 +110,6 @@ export const ScrapbookScene: React.FC<ScrapbookSceneProps> = () => {
           ))}
         </div>
 
-        {/* K-Drama Easter Egg Card */}
-        <ScrollReveal direction="up" delay={0.4}>
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-5 shadow-md border border-kai-beige max-w-sm mx-auto flex items-center gap-4 text-left">
-            <div className="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-2xl shrink-0">
-              📺
-            </div>
-            <div>
-              <span className="text-[10px] font-mono font-bold uppercase text-rose-600 tracking-wider">
-                Kai's Watchlist
-              </span>
-              <h4 className="font-serif font-bold text-slate-900 text-sm">
-                Crash Landing on You
-              </h4>
-              <p className="text-xs text-slate-500 italic font-serif">
-                "Kai-approved. Apparently I have homework now. 😅"
-              </p>
-            </div>
-          </div>
-        </ScrollReveal>
-
         {/* Lightbox Modal */}
         <AnimatePresence>
           {selectedPhoto && (

@@ -65,16 +65,13 @@ export const PaintingsScene: React.FC<PaintingsSceneProps> = () => {
             </span>
 
             <h2 className="text-4xl sm:text-6xl font-serif font-extrabold text-amber-100 tracking-tight">
-              The girl who paints moons. 🌙
+              The girl who paints.
             </h2>
 
             <div className="space-y-2 text-base sm:text-xl font-serif italic text-purple-200/90 max-w-xl mx-auto">
-              <p>You once told me something I really liked.</p>
-              <p className="text-amber-200 font-bold not-italic">
-                "You like putting the moon somewhere in your paintings."
-              </p>
+              
               <p className="pt-2 text-purple-300 text-sm font-sans not-italic font-medium">
-                So I thought they deserved a little place here too. 🌙
+                 My favs 😍
               </p>
             </div>
           </div>

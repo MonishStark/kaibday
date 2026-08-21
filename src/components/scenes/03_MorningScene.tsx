@@ -66,7 +66,7 @@ export const MorningScene: React.FC<MorningSceneProps> = () => {
                 <p>No rushing.</p>
                 <p>No unnecessary stress.</p>
                 <p className="text-kai-charcoal font-semibold not-italic font-sans text-lg">
-                  Just a good morning, good coffee, and a reason to smile.
+                  Just a good morning, good coffee, and a reason to smile. And I wish that smile never fades from the sweet face.
                 </p>
               </div>
             </div>

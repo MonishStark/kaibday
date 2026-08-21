@@ -68,7 +68,7 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
                 />
               </div>
               <p className="font-handwritten text-2xl text-center mt-3 text-amber-950 font-bold">
-                Cat Approved 🐱
+                Cat Approved 🐱(Still scared of Gingers look)
               </p>
             </motion.div>
           </ScrollReveal>
@@ -149,11 +149,9 @@ export const AnimalsScene: React.FC<AnimalsSceneProps> = () => {
               ONE DAY... 🐾
             </span>
             <p className="text-base sm:text-lg font-serif italic text-amber-950">
-              "You once told me that if you ever become rich, you'd love to build a small shelter and community space for stray animals."
+              "I hope the dream of building an animal shelter comes true soooon...."
             </p>
-            <p className="text-sm font-sans font-semibold text-amber-800 pt-1">
-              I hope you get to build it someday.
-            </p>
+            
           </div>
         </ScrollReveal>
 
