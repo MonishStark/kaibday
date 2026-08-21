@@ -31,19 +31,31 @@ export const LetterScene: React.FC<LetterSceneProps> = () => {
 
             <div className="space-y-4 text-base sm:text-lg font-serif leading-relaxed text-kai-charcoal/90">
               <p>
-                Happy Birthday! 🎈
+                Happy Birthday, Kai! 🎂❤️
               </p>
               <p>
-                When we first started writing to each other almost three months ago, I didn't expect our letters to become such a meaningful part of my days.
+                I hope today brings you the happiness, love, and warmth that you truly deserve. On your special day, I just wanted to take a moment to thank you for all the wonderful memories, stories, and little pieces of your life that you've shared with me.
               </p>
               <p>
-                From your 5 AM mornings and coffee routines, to your runs, your love for animals, and your painting quarantine stories — every little detail you've shared has been a joy to read.
+                Even though it has only been almost three months since we started writing to each other, I’m genuinely grateful for all the conversations we've had — the random stories, the funny moments, the thoughtful words, and all the little details that have made every letter special.
               </p>
               <p>
-                Thank you for your warmth, your humor, your thoughtful words, and for calling me your "calm, steady one". I hope today brings you as much happiness as your letters bring to others.
+                Thank you for sharing your world with me — your mornings, your coffee moments, your adventures, your achievements, your love for animals, your paintings, and all those small things that make your days unique. It has been really special getting to know these little pieces of your life.
+              </p>
+              <p>
+                For this new year of your life, I wish you endless happiness, peace, good health, and countless beautiful moments. May you achieve everything you dream of, reach every goal you work towards, and always have the strength and courage to chase new adventures.
+              </p>
+              <p>
+                I hope your days are filled with peaceful mornings, exciting journeys, proud achievements, people who make you smile, and memories that you will cherish forever.
+              </p>
+              <p>
+                May this year bring you more reasons to laugh, more moments to celebrate, and more happiness than you can imagine.
               </p>
               <p className="pt-2 font-semibold">
-                May this year ahead be filled with peaceful mornings, good coffee, exciting runs, and everything that makes your heart smile.
+                Happy Birthday once again, Kai! 🎈✨
+              </p>
+              <p className="pt-2 font-semibold">
+                Wishing you a beautiful year ahead filled with love, success, peace, and everything your heart hopes for. ❤️
               </p>
             </div>
 
