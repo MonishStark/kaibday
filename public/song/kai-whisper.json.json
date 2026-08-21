@@ -1,0 +1,1349 @@
+{
+  "text": " Today is your day, so let the world fade away Leave all your worries behind and let yourself smile Make a wish, close your eyes, let your dreams reach the sky Tonight is yours to celebrate, so don't let a moment go to waste Happy birthday, kind, may your days be bright May you laugh a little louder and dream a little higher Happy birthday, kind, here's to you tonight May this year bring you everything that feels right Another year begins, another chapter starts Keep all the beautiful moments and follow your heart Happy birthday, kind, may your days be bright May you laugh a little louder and dream a little higher Happy birthday, kind, here's to you tonight May this year bring you everything that feels right So here's to new memories To moments yet to come To all the little reasons That make life so much fun Happy birthday, kind, may your wishes come true May this year be filled with happiness for you Happy birthday, king, keep shining your light Here's to another beautiful year and wonderful life Happy birthday, kind, happy birthday Kid Have the loveliest day",
+  "segments": [
+    {
+      "text": " Today is your day, so let the world fade away",
+      "start": 4.279999999999999,
+      "end": 12.7,
+      "duration": 8.42,
+      "words": [
+        {
+          "word": " Today",
+          "start": 4.279999999999999,
+          "end": 5.6,
+          "probability": 0.1768798828125
+        },
+        {
+          "word": " is",
+          "start": 5.6,
+          "end": 6.92,
+          "probability": 0.96435546875
+        },
+        {
+          "word": " your",
+          "start": 6.92,
+          "end": 7.28,
+          "probability": 0.9912109375
+        },
+        {
+          "word": " day,",
+          "start": 7.28,
+          "end": 7.9,
+          "probability": 0.998046875
+        },
+        {
+          "word": " so",
+          "start": 7.98,
+          "end": 9.86,
+          "probability": 0.9794921875
+        },
+        {
+          "word": " let",
+          "start": 9.86,
+          "end": 10.3,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " the",
+          "start": 10.3,
+          "end": 10.56,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " world",
+          "start": 10.56,
+          "end": 11.1,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " fade",
+          "start": 11.1,
+          "end": 11.7,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " away",
+          "start": 11.7,
+          "end": 12.7,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Leave all your worries behind and let yourself smile",
+      "start": 12.7,
+      "end": 20.68,
+      "duration": 7.98,
+      "words": [
+        {
+          "word": " Leave",
+          "start": 12.7,
+          "end": 14.86,
+          "probability": 0.5654296875
+        },
+        {
+          "word": " all",
+          "start": 14.86,
+          "end": 15.5,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " your",
+          "start": 15.5,
+          "end": 15.72,
+          "probability": 0.9970703125
+        },
+        {
+          "word": " worries",
+          "start": 15.72,
+          "end": 16.68,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " behind",
+          "start": 16.68,
+          "end": 17.48,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " and",
+          "start": 17.48,
+          "end": 18.48,
+          "probability": 0.64892578125
+        },
+        {
+          "word": " let",
+          "start": 18.48,
+          "end": 18.86,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " yourself",
+          "start": 18.86,
+          "end": 19.54,
+          "probability": 0.99072265625
+        },
+        {
+          "word": " smile",
+          "start": 19.54,
+          "end": 20.68,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "text": " Make a wish, close your eyes, let your dreams reach the sky",
+      "start": 22.819999999999997,
+      "end": 32.1,
+      "duration": 9.280000000000005,
+      "words": [
+        {
+          "word": " Make",
+          "start": 22.819999999999997,
+          "end": 24.02,
+          "probability": 0.426025390625
+        },
+        {
+          "word": " a",
+          "start": 24.02,
+          "end": 24.4,
+          "probability": 0.9951171875
+        },
+        {
+          "word": " wish,",
+          "start": 24.4,
+          "end": 25.2,
+          "probability": 0.998046875
+        },
+        {
+          "word": " close",
+          "start": 25.66,
+          "end": 26.52,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " your",
+          "start": 26.52,
+          "end": 26.86,
+          "probability": 1.0
+        },
+        {
+          "word": " eyes,",
+          "start": 26.86,
+          "end": 27.84,
+          "probability": 1.0
+        },
+        {
+          "word": " let",
+          "start": 28.08,
+          "end": 28.88,
+          "probability": 0.9609375
+        },
+        {
+          "word": " your",
+          "start": 28.88,
+          "end": 29.18,
+          "probability": 1.0
+        },
+        {
+          "word": " dreams",
+          "start": 29.18,
+          "end": 30.44,
+          "probability": 1.0
+        },
+        {
+          "word": " reach",
+          "start": 30.44,
+          "end": 31.06,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " the",
+          "start": 31.06,
+          "end": 31.64,
+          "probability": 1.0
+        },
+        {
+          "word": " sky",
+          "start": 31.64,
+          "end": 32.1,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "text": " Tonight is yours to celebrate, so don't let a moment go to waste",
+      "start": 32.1,
+      "end": 43.12,
+      "duration": 11.019999999999996,
+      "words": [
+        {
+          "word": " Tonight",
+          "start": 32.1,
+          "end": 34.0,
+          "probability": 0.285400390625
+        },
+        {
+          "word": " is",
+          "start": 34.0,
+          "end": 35.34,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " yours",
+          "start": 35.34,
+          "end": 36.06,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " to",
+          "start": 36.06,
+          "end": 36.5,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " celebrate,",
+          "start": 36.5,
+          "end": 37.5,
+          "probability": 1.0
+        },
+        {
+          "word": " so",
+          "start": 38.42,
+          "end": 38.94,
+          "probability": 0.998046875
+        },
+        {
+          "word": " don't",
+          "start": 38.94,
+          "end": 39.66,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " let",
+          "start": 39.66,
+          "end": 39.98,
+          "probability": 1.0
+        },
+        {
+          "word": " a",
+          "start": 39.98,
+          "end": 40.28,
+          "probability": 0.99609375
+        },
+        {
+          "word": " moment",
+          "start": 40.28,
+          "end": 41.04,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " go",
+          "start": 41.04,
+          "end": 42.02,
+          "probability": 1.0
+        },
+        {
+          "word": " to",
+          "start": 42.02,
+          "end": 42.44,
+          "probability": 0.9638671875
+        },
+        {
+          "word": " waste",
+          "start": 42.44,
+          "end": 43.12,
+          "probability": 0.99853515625
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, may your days be bright",
+      "start": 43.12,
+      "end": 47.96,
+      "duration": 4.840000000000003,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 43.12,
+          "end": 43.82,
+          "probability": 0.962890625
+        },
+        {
+          "word": " birthday,",
+          "start": 43.82,
+          "end": 44.8,
+          "probability": 0.75537109375
+        },
+        {
+          "word": " kind,",
+          "start": 45.22,
+          "end": 45.54,
+          "probability": 0.456298828125
+        },
+        {
+          "word": " may",
+          "start": 45.8,
+          "end": 46.06,
+          "probability": 0.9970703125
+        },
+        {
+          "word": " your",
+          "start": 46.06,
+          "end": 46.36,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " days",
+          "start": 46.36,
+          "end": 47.04,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " be",
+          "start": 47.04,
+          "end": 47.38,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " bright",
+          "start": 47.38,
+          "end": 47.96,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "text": " May you laugh a little louder and dream a little higher",
+      "start": 47.96,
+      "end": 53.3,
+      "duration": 5.339999999999996,
+      "words": [
+        {
+          "word": " May",
+          "start": 47.96,
+          "end": 48.54,
+          "probability": 0.82421875
+        },
+        {
+          "word": " you",
+          "start": 48.54,
+          "end": 48.78,
+          "probability": 0.98486328125
+        },
+        {
+          "word": " laugh",
+          "start": 48.78,
+          "end": 49.54,
+          "probability": 0.921875
+        },
+        {
+          "word": " a",
+          "start": 49.54,
+          "end": 49.8,
+          "probability": 0.99169921875
+        },
+        {
+          "word": " little",
+          "start": 49.8,
+          "end": 50.26,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " louder",
+          "start": 50.26,
+          "end": 51.0,
+          "probability": 0.91015625
+        },
+        {
+          "word": " and",
+          "start": 51.0,
+          "end": 51.34,
+          "probability": 0.416259765625
+        },
+        {
+          "word": " dream",
+          "start": 51.34,
+          "end": 51.72,
+          "probability": 0.998046875
+        },
+        {
+          "word": " a",
+          "start": 51.72,
+          "end": 52.26,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " little",
+          "start": 52.26,
+          "end": 52.68,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " higher",
+          "start": 52.68,
+          "end": 53.3,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, here's to you tonight",
+      "start": 53.3,
+      "end": 58.84,
+      "duration": 5.540000000000006,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 53.3,
+          "end": 53.96,
+          "probability": 0.6416015625
+        },
+        {
+          "word": " birthday,",
+          "start": 53.96,
+          "end": 54.9,
+          "probability": 0.71484375
+        },
+        {
+          "word": " kind,",
+          "start": 55.36,
+          "end": 55.66,
+          "probability": 0.00145721435546875
+        },
+        {
+          "word": " here's",
+          "start": 56.28,
+          "end": 57.18,
+          "probability": 0.9736328125
+        },
+        {
+          "word": " to",
+          "start": 57.18,
+          "end": 57.4,
+          "probability": 0.99755859375
+        },
+        {
+          "word": " you",
+          "start": 57.4,
+          "end": 58.0,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " tonight",
+          "start": 58.0,
+          "end": 58.84,
+          "probability": 0.98974609375
+        }
+      ]
+    },
+    {
+      "text": " May this year bring you everything that feels right",
+      "start": 61.919999999999995,
+      "end": 69.06,
+      "duration": 7.140000000000008,
+      "words": [
+        {
+          "word": " May",
+          "start": 61.919999999999995,
+          "end": 63.16,
+          "probability": 0.9677734375
+        },
+        {
+          "word": " this",
+          "start": 63.16,
+          "end": 63.6,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " year",
+          "start": 63.6,
+          "end": 64.48,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " bring",
+          "start": 64.48,
+          "end": 65.2,
+          "probability": 0.99658203125
+        },
+        {
+          "word": " you",
+          "start": 65.2,
+          "end": 65.76,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " everything",
+          "start": 65.76,
+          "end": 66.98,
+          "probability": 0.943359375
+        },
+        {
+          "word": " that",
+          "start": 66.98,
+          "end": 67.7,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " feels",
+          "start": 67.7,
+          "end": 68.4,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " right",
+          "start": 68.4,
+          "end": 69.06,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "text": " Another year begins, another chapter starts",
+      "start": 72.46,
+      "end": 81.56,
+      "duration": 9.100000000000009,
+      "words": [
+        {
+          "word": " Another",
+          "start": 72.46,
+          "end": 73.86,
+          "probability": 0.42919921875
+        },
+        {
+          "word": " year",
+          "start": 73.86,
+          "end": 75.02,
+          "probability": 0.96875
+        },
+        {
+          "word": " begins,",
+          "start": 75.02,
+          "end": 76.58,
+          "probability": 0.9951171875
+        },
+        {
+          "word": " another",
+          "start": 76.58,
+          "end": 78.98,
+          "probability": 0.98779296875
+        },
+        {
+          "word": " chapter",
+          "start": 78.98,
+          "end": 80.42,
+          "probability": 1.0
+        },
+        {
+          "word": " starts",
+          "start": 80.42,
+          "end": 81.56,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "text": " Keep all the beautiful moments and follow your heart",
+      "start": 81.56,
+      "end": 89.3,
+      "duration": 7.739999999999995,
+      "words": [
+        {
+          "word": " Keep",
+          "start": 81.56,
+          "end": 83.4,
+          "probability": 0.70751953125
+        },
+        {
+          "word": " all",
+          "start": 83.4,
+          "end": 84.1,
+          "probability": 1.0
+        },
+        {
+          "word": " the",
+          "start": 84.1,
+          "end": 84.32,
+          "probability": 1.0
+        },
+        {
+          "word": " beautiful",
+          "start": 84.32,
+          "end": 85.34,
+          "probability": 1.0
+        },
+        {
+          "word": " moments",
+          "start": 85.34,
+          "end": 86.52,
+          "probability": 1.0
+        },
+        {
+          "word": " and",
+          "start": 86.52,
+          "end": 87.06,
+          "probability": 0.98095703125
+        },
+        {
+          "word": " follow",
+          "start": 87.06,
+          "end": 87.64,
+          "probability": 1.0
+        },
+        {
+          "word": " your",
+          "start": 87.64,
+          "end": 88.46,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " heart",
+          "start": 88.46,
+          "end": 89.3,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, may your days be bright",
+      "start": 91.80000000000001,
+      "end": 96.94,
+      "duration": 5.139999999999986,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 91.80000000000001,
+          "end": 92.84,
+          "probability": 0.9677734375
+        },
+        {
+          "word": " birthday,",
+          "start": 92.84,
+          "end": 93.72,
+          "probability": 0.8388671875
+        },
+        {
+          "word": " kind,",
+          "start": 94.2,
+          "end": 94.5,
+          "probability": 0.033599853515625
+        },
+        {
+          "word": " may",
+          "start": 94.76,
+          "end": 95.1,
+          "probability": 0.96240234375
+        },
+        {
+          "word": " your",
+          "start": 95.1,
+          "end": 95.38,
+          "probability": 0.998046875
+        },
+        {
+          "word": " days",
+          "start": 95.38,
+          "end": 96.02,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " be",
+          "start": 96.02,
+          "end": 96.4,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " bright",
+          "start": 96.4,
+          "end": 96.94,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "text": " May you laugh a little louder and dream a little higher",
+      "start": 96.94,
+      "end": 102.26,
+      "duration": 5.320000000000007,
+      "words": [
+        {
+          "word": " May",
+          "start": 96.94,
+          "end": 97.48,
+          "probability": 0.72705078125
+        },
+        {
+          "word": " you",
+          "start": 97.48,
+          "end": 97.78,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " laugh",
+          "start": 97.78,
+          "end": 98.52,
+          "probability": 0.998046875
+        },
+        {
+          "word": " a",
+          "start": 98.52,
+          "end": 98.82,
+          "probability": 1.0
+        },
+        {
+          "word": " little",
+          "start": 98.82,
+          "end": 99.2,
+          "probability": 1.0
+        },
+        {
+          "word": " louder",
+          "start": 99.2,
+          "end": 99.94,
+          "probability": 1.0
+        },
+        {
+          "word": " and",
+          "start": 99.94,
+          "end": 100.3,
+          "probability": 0.9921875
+        },
+        {
+          "word": " dream",
+          "start": 100.3,
+          "end": 100.72,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " a",
+          "start": 100.72,
+          "end": 101.24,
+          "probability": 1.0
+        },
+        {
+          "word": " little",
+          "start": 101.24,
+          "end": 101.68,
+          "probability": 1.0
+        },
+        {
+          "word": " higher",
+          "start": 101.68,
+          "end": 102.26,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, here's to you tonight",
+      "start": 102.26,
+      "end": 107.82,
+      "duration": 5.559999999999988,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 102.26,
+          "end": 102.88,
+          "probability": 0.99560546875
+        },
+        {
+          "word": " birthday,",
+          "start": 102.88,
+          "end": 103.84,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " kind,",
+          "start": 104.36,
+          "end": 104.88,
+          "probability": 0.98486328125
+        },
+        {
+          "word": " here's",
+          "start": 105.6,
+          "end": 106.12,
+          "probability": 0.98681640625
+        },
+        {
+          "word": " to",
+          "start": 106.12,
+          "end": 106.34,
+          "probability": 1.0
+        },
+        {
+          "word": " you",
+          "start": 106.34,
+          "end": 107.04,
+          "probability": 1.0
+        },
+        {
+          "word": " tonight",
+          "start": 107.04,
+          "end": 107.82,
+          "probability": 0.99853515625
+        }
+      ]
+    },
+    {
+      "text": " May this year bring you everything that feels right",
+      "start": 110.78,
+      "end": 117.84,
+      "duration": 7.060000000000002,
+      "words": [
+        {
+          "word": " May",
+          "start": 110.78,
+          "end": 112.18,
+          "probability": 0.57958984375
+        },
+        {
+          "word": " this",
+          "start": 112.18,
+          "end": 112.58,
+          "probability": 0.99658203125
+        },
+        {
+          "word": " year",
+          "start": 112.58,
+          "end": 113.56,
+          "probability": 0.9931640625
+        },
+        {
+          "word": " bring",
+          "start": 113.56,
+          "end": 114.2,
+          "probability": 0.978515625
+        },
+        {
+          "word": " you",
+          "start": 114.2,
+          "end": 114.82,
+          "probability": 0.9951171875
+        },
+        {
+          "word": " everything",
+          "start": 114.82,
+          "end": 115.86,
+          "probability": 0.78076171875
+        },
+        {
+          "word": " that",
+          "start": 115.86,
+          "end": 116.64,
+          "probability": 0.998046875
+        },
+        {
+          "word": " feels",
+          "start": 116.64,
+          "end": 117.38,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " right",
+          "start": 117.38,
+          "end": 117.84,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " So here's to new memories",
+      "start": 119.9,
+      "end": 124.24,
+      "duration": 4.339999999999989,
+      "words": [
+        {
+          "word": " So",
+          "start": 119.9,
+          "end": 121.3,
+          "probability": 0.423583984375
+        },
+        {
+          "word": " here's",
+          "start": 121.3,
+          "end": 121.82,
+          "probability": 0.99609375
+        },
+        {
+          "word": " to",
+          "start": 121.82,
+          "end": 121.98,
+          "probability": 0.99072265625
+        },
+        {
+          "word": " new",
+          "start": 121.98,
+          "end": 122.42,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " memories",
+          "start": 122.42,
+          "end": 124.24,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " To moments yet to come",
+      "start": 124.24,
+      "end": 128.18,
+      "duration": 3.940000000000012,
+      "words": [
+        {
+          "word": " To",
+          "start": 124.24,
+          "end": 126.16,
+          "probability": 0.53271484375
+        },
+        {
+          "word": " moments",
+          "start": 126.16,
+          "end": 126.86,
+          "probability": 0.998046875
+        },
+        {
+          "word": " yet",
+          "start": 126.86,
+          "end": 127.2,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " to",
+          "start": 127.2,
+          "end": 127.38,
+          "probability": 1.0
+        },
+        {
+          "word": " come",
+          "start": 127.38,
+          "end": 128.18,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "text": " To all the little reasons",
+      "start": 130.0,
+      "end": 133.62,
+      "duration": 3.6200000000000045,
+      "words": [
+        {
+          "word": " To",
+          "start": 130.0,
+          "end": 131.12,
+          "probability": 0.8310546875
+        },
+        {
+          "word": " all",
+          "start": 131.12,
+          "end": 131.52,
+          "probability": 0.998046875
+        },
+        {
+          "word": " the",
+          "start": 131.52,
+          "end": 131.76,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " little",
+          "start": 131.76,
+          "end": 132.32,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " reasons",
+          "start": 132.32,
+          "end": 133.62,
+          "probability": 0.99755859375
+        }
+      ]
+    },
+    {
+      "text": " That make life so much fun",
+      "start": 133.62,
+      "end": 137.62,
+      "duration": 4.0,
+      "words": [
+        {
+          "word": " That",
+          "start": 133.62,
+          "end": 134.78,
+          "probability": 0.49072265625
+        },
+        {
+          "word": " make",
+          "start": 134.78,
+          "end": 135.18,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " life",
+          "start": 135.18,
+          "end": 135.64,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " so",
+          "start": 135.64,
+          "end": 136.2,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " much",
+          "start": 136.2,
+          "end": 136.96,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " fun",
+          "start": 136.96,
+          "end": 137.62,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, may your wishes come true",
+      "start": 140.68,
+      "end": 146.16,
+      "duration": 5.47999999999999,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 140.68,
+          "end": 141.8,
+          "probability": 0.9716796875
+        },
+        {
+          "word": " birthday,",
+          "start": 141.8,
+          "end": 142.76,
+          "probability": 0.85986328125
+        },
+        {
+          "word": " kind,",
+          "start": 143.2,
+          "end": 143.4,
+          "probability": 0.00037670135498046875
+        },
+        {
+          "word": " may",
+          "start": 143.4,
+          "end": 144.0,
+          "probability": 0.802734375
+        },
+        {
+          "word": " your",
+          "start": 144.0,
+          "end": 144.34,
+          "probability": 0.9931640625
+        },
+        {
+          "word": " wishes",
+          "start": 144.34,
+          "end": 145.08,
+          "probability": 0.99462890625
+        },
+        {
+          "word": " come",
+          "start": 145.08,
+          "end": 145.72,
+          "probability": 0.99609375
+        },
+        {
+          "word": " true",
+          "start": 145.72,
+          "end": 146.16,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " May this year be filled with happiness for you",
+      "start": 146.16,
+      "end": 151.14,
+      "duration": 4.97999999999999,
+      "words": [
+        {
+          "word": " May",
+          "start": 146.16,
+          "end": 146.74,
+          "probability": 0.9765625
+        },
+        {
+          "word": " this",
+          "start": 146.74,
+          "end": 147.12,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " year",
+          "start": 147.12,
+          "end": 147.68,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " be",
+          "start": 147.68,
+          "end": 147.96,
+          "probability": 0.99951171875
+        },
+        {
+          "word": " filled",
+          "start": 147.96,
+          "end": 148.8,
+          "probability": 0.998046875
+        },
+        {
+          "word": " with",
+          "start": 148.8,
+          "end": 149.2,
+          "probability": 0.94970703125
+        },
+        {
+          "word": " happiness",
+          "start": 149.2,
+          "end": 150.2,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " for",
+          "start": 150.2,
+          "end": 150.72,
+          "probability": 0.99853515625
+        },
+        {
+          "word": " you",
+          "start": 150.72,
+          "end": 151.14,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, king, keep shining your light",
+      "start": 151.14,
+      "end": 158.46,
+      "duration": 7.320000000000022,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 151.14,
+          "end": 151.9,
+          "probability": 0.84912109375
+        },
+        {
+          "word": " birthday,",
+          "start": 151.9,
+          "end": 152.84,
+          "probability": 0.445068359375
+        },
+        {
+          "word": " king,",
+          "start": 153.28,
+          "end": 153.42,
+          "probability": 7.510185241699219e-06
+        },
+        {
+          "word": " keep",
+          "start": 153.7,
+          "end": 154.12,
+          "probability": 0.92529296875
+        },
+        {
+          "word": " shining",
+          "start": 154.12,
+          "end": 154.94,
+          "probability": 0.99609375
+        },
+        {
+          "word": " your",
+          "start": 154.94,
+          "end": 156.54,
+          "probability": 0.86767578125
+        },
+        {
+          "word": " light",
+          "start": 156.54,
+          "end": 158.46,
+          "probability": 0.99755859375
+        }
+      ]
+    },
+    {
+      "text": " Here's to another beautiful year and wonderful life",
+      "start": 158.46,
+      "end": 166.98,
+      "duration": 8.519999999999982,
+      "words": [
+        {
+          "word": " Here's",
+          "start": 158.46,
+          "end": 161.0,
+          "probability": 0.87890625
+        },
+        {
+          "word": " to",
+          "start": 161.0,
+          "end": 161.22,
+          "probability": 0.9970703125
+        },
+        {
+          "word": " another",
+          "start": 161.22,
+          "end": 162.26,
+          "probability": 0.9970703125
+        },
+        {
+          "word": " beautiful",
+          "start": 162.26,
+          "end": 163.68,
+          "probability": 0.99755859375
+        },
+        {
+          "word": " year",
+          "start": 163.68,
+          "end": 164.66,
+          "probability": 0.9990234375
+        },
+        {
+          "word": " and",
+          "start": 164.66,
+          "end": 165.42,
+          "probability": 0.9140625
+        },
+        {
+          "word": " wonderful",
+          "start": 165.42,
+          "end": 166.16,
+          "probability": 0.75537109375
+        },
+        {
+          "word": " life",
+          "start": 166.16,
+          "end": 166.98,
+          "probability": 0.322998046875
+        }
+      ]
+    },
+    {
+      "text": " Happy birthday, kind, happy birthday Kid",
+      "start": 169.79999999999998,
+      "end": 179.22,
+      "duration": 9.420000000000016,
+      "words": [
+        {
+          "word": " Happy",
+          "start": 169.79999999999998,
+          "end": 171.2,
+          "probability": 0.962890625
+        },
+        {
+          "word": " birthday,",
+          "start": 171.2,
+          "end": 172.16,
+          "probability": 0.9833984375
+        },
+        {
+          "word": " kind,",
+          "start": 173.82,
+          "end": 174.1,
+          "probability": 0.0008678436279296875
+        },
+        {
+          "word": " happy",
+          "start": 174.12,
+          "end": 177.98,
+          "probability": 0.039520263671875
+        },
+        {
+          "word": " birthday",
+          "start": 177.98,
+          "end": 178.52,
+          "probability": 0.92431640625
+        },
+        {
+          "word": " Kid",
+          "start": 178.52,
+          "end": 179.22,
+          "probability": 1.9252300262451172e-05
+        }
+      ]
+    },
+    {
+      "text": " Have the loveliest day",
+      "start": 179.22,
+      "end": 184.18,
+      "duration": 4.960000000000008,
+      "words": [
+        {
+          "word": " Have",
+          "start": 179.22,
+          "end": 180.9,
+          "probability": 0.9599609375
+        },
+        {
+          "word": " the",
+          "start": 180.9,
+          "end": 181.2,
+          "probability": 0.97412109375
+        },
+        {
+          "word": " loveliest",
+          "start": 181.2,
+          "end": 183.42,
+          "probability": 0.98974609375
+        },
+        {
+          "word": " day",
+          "start": 183.42,
+          "end": 184.18,
+          "probability": 0.9990234375
+        }
+      ]
+    }
+  ]
+}
