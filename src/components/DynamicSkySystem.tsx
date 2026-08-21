@@ -72,6 +72,9 @@ export const DynamicSkySystem: React.FC = () => {
       const doc = document.documentElement;
       const maxScroll = doc.scrollHeight - doc.clientHeight;
       const t = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+      
+      // Check if user is past Chapter 1 (second section onwards)
+      const isPastSectionOne = window.scrollY > window.innerHeight * 0.45;
 
       // Find bracketing stops
       let i = 0;
@@ -97,6 +100,8 @@ export const DynamicSkySystem: React.FC = () => {
       }
       if (orbWrapRef.current) {
         orbWrapRef.current.style.top = `${lerp(s1.top, s2.top, f)}%`;
+        orbWrapRef.current.style.opacity = isPastSectionOne ? '1' : '0';
+        orbWrapRef.current.style.transform = isPastSectionOne ? 'scale(1)' : 'scale(0.7)';
       }
 
       animFrameId = requestAnimationFrame(updateFrame);
@@ -108,11 +113,11 @@ export const DynamicSkySystem: React.FC = () => {
 
   return (
     <>
-      {/* Fixed Sun/Moon Celestial Orb (Scaled compact and aligned to top right margin) */}
+      {/* Fixed Sun/Moon Celestial Orb (Hidden in Section 1, Fades In Smoothly in Section 2) */}
       <div
         id="orb-wrap"
         ref={orbWrapRef}
-        className="fixed top-[6%] right-[4%] max-sm:right-[3%] z-[30] w-[90px] h-[90px] max-sm:w-[64px] max-sm:h-[64px] pointer-events-none transition-[top] duration-200 ease-out select-none"
+        className="fixed top-[6%] right-[4%] max-sm:right-[3%] z-[30] w-[90px] h-[90px] max-sm:w-[64px] max-sm:h-[64px] pointer-events-none transition-[top,opacity,transform] duration-500 ease-out select-none opacity-0 scale-75"
       >
         <div id="orb-glow" ref={glowRef} className="absolute inset-[-45px] max-sm:inset-[-30px] rounded-full transition-[background] duration-150 ease-linear" />
         <div id="orb" ref={orbRef} className="absolute inset-[14px] max-sm:inset-[10px] rounded-full transition-[background,box-shadow] duration-150 ease-linear">
