@@ -29,20 +29,59 @@ class SoundManager {
         }
       });
 
-      // Try playing immediately when constructor fires on page load!
-      this.playBirthdaySong();
+      // Muted Autoplay on Page Load (100% allowed by Chrome & Safari policies!)
+      this.startMutedAutoplay();
 
-      // Fallback: start audio on any micro-gesture (scroll, touch, move, keydown)
-      const autoPlayOnFirstGesture = () => {
-        if (!this.isSongPlaying && this.songAudio) {
-          this.playBirthdaySong();
-        }
+      // Unmute & enable WebAudio on ANY user gesture (touch, scroll, click, tap)
+      const unmuteOnFirstGesture = () => {
+        this.unmuteAndPlay();
       };
 
-      ['pointerdown', 'touchstart', 'scroll', 'mousemove', 'keydown'].forEach(evtName => {
-        window.addEventListener(evtName, autoPlayOnFirstGesture, { passive: true, capture: true });
+      ['pointerdown', 'touchstart', 'click', 'scroll', 'wheel', 'keydown'].forEach(evtName => {
+        window.addEventListener(evtName, unmuteOnFirstGesture, { passive: true, capture: true });
       });
     }
+  }
+
+  // Muted autoplay runs immediately on page mount (passes browser security checks)
+  private startMutedAutoplay() {
+    if (!this.songAudio) return;
+    this.songAudio.muted = true;
+    const p = this.songAudio.play();
+    if (p !== undefined) {
+      p.then(() => {
+        this.isSongPlaying = true;
+      }).catch(err => {
+        console.warn('Muted autoplay notice:', err);
+      });
+    }
+  }
+
+  // Unmute audio as soon as user touches or scrolls
+  public unmuteAndPlay() {
+    this.initCtx();
+    if (this.songAudio) {
+      if (this.isMuted) {
+        this.songAudio.muted = true;
+      } else {
+        this.songAudio.muted = false;
+      }
+
+      if (this.songAudio.paused) {
+        const p = this.songAudio.play();
+        if (p !== undefined) {
+          p.then(() => {
+            this.isSongPlaying = true;
+          }).catch(() => {});
+        }
+      } else {
+        this.isSongPlaying = true;
+      }
+    }
+  }
+
+  public unlockAudio() {
+    this.unmuteAndPlay();
   }
 
   private initCtx() {
@@ -67,19 +106,25 @@ class SoundManager {
     return this.isMuted;
   }
 
-  // Play Birthday Song immediately
+  // Play Birthday Song
   public playBirthdaySong() {
     if (!this.songAudio) return;
     this.stopBGM();
     this.initCtx();
 
-    this.songAudio.muted = this.isMuted;
+    if (this.isMuted) {
+      this.songAudio.muted = true;
+    } else {
+      this.songAudio.muted = false;
+    }
+
     const playPromise = this.songAudio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         this.isSongPlaying = true;
-      }).catch(err => {
-        console.warn('Browser audio initial play notice:', err);
+      }).catch(() => {
+        // Fallback: start muted if unmuted was blocked by browser
+        this.startMutedAutoplay();
       });
     }
   }
@@ -96,8 +141,8 @@ class SoundManager {
     if (playPromise !== undefined) {
       playPromise.then(() => {
         this.isSongPlaying = true;
-      }).catch(err => {
-        console.warn('Browser audio play notice:', err);
+      }).catch(() => {
+        this.startMutedAutoplay();
       });
     }
   }
