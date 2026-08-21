@@ -37,10 +37,10 @@ export const LetterScene: React.FC<LetterSceneProps> = () => {
                 I hope today brings you the happiness, love, and warmth that you truly deserve. On your special day, I just wanted to take a moment to thank you for all the wonderful memories, stories, and little pieces of your life that you've shared with me.
               </p>
               <p>
-                Even though it has only been almost three months since we started writing to each other, I’m genuinely grateful for all the conversations we've had — the random stories, the funny moments, the thoughtful words, and all the little details that have made every letter special.
+                Even though it has only been almost three months since we started writing to each other, I’m genuinely grateful for all the conversations we've had the random stories, the funny moments, the thoughtful words, and all the little details that have made every letter special.
               </p>
               <p>
-                Thank you for sharing your world with me — your mornings, your coffee moments, your adventures, your achievements, your love for animals, your paintings, and all those small things that make your days unique. It has been really special getting to know these little pieces of your life.
+                Thank you for sharing your world with me your mornings, your coffee moments, your adventures, your achievements, your love for animals, your paintings, and all those small things that make your days unique. It has been really special getting to know these little pieces of your life.
               </p>
               <p>
                 For this new year of your life, I wish you endless happiness, peace, good health, and countless beautiful moments. May you achieve everything you dream of, reach every goal you work towards, and always have the strength and courage to chase new adventures.
