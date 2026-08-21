@@ -70,7 +70,7 @@ export const WishScene: React.FC<WishSceneProps> = () => {
               Okay, birthday girl.
             </p>
 
-            <h2 className="text-4xl sm:text-6xl font-serif font-extrabold text-amber-100 tracking-tight">
+            <h2 className="text-3xl sm:text-6xl font-serif font-extrabold text-amber-100 tracking-tight">
               Make a wish. ✨
             </h2>
           </div>
@@ -78,11 +78,11 @@ export const WishScene: React.FC<WishSceneProps> = () => {
 
         {/* Multi-Tier Luxury Birthday Cake */}
         <ScrollReveal direction="zoom" delay={0.2}>
-          <div className="relative my-6 inline-block">
+          <div className="relative my-6 inline-block max-w-full">
             
             {/* Candle Smoke */}
             {!candlesLit && (
-              <div className="absolute -top-16 left-0 right-0 flex justify-center gap-8 pointer-events-none z-30">
+              <div className="absolute -top-16 left-0 right-0 flex justify-center gap-6 sm:gap-8 pointer-events-none z-30">
                 {[0, 1, 2, 3, 4].map((i) => (
                   <span
                     key={i}
@@ -94,7 +94,7 @@ export const WishScene: React.FC<WishSceneProps> = () => {
             )}
 
             {/* Candle Flames */}
-            <div className="relative z-20 flex justify-center gap-7 sm:gap-9 -mb-3">
+            <div className="relative z-20 flex justify-center gap-5 sm:gap-9 -mb-3">
               {[0, 1, 2, 3, 4].map((idx) => (
                 <div key={idx} className="flex flex-col items-center">
                   {candlesLit && (
@@ -108,10 +108,10 @@ export const WishScene: React.FC<WishSceneProps> = () => {
                         repeat: Infinity,
                         delay: idx * 0.2,
                       }}
-                      className="w-5 h-7 bg-gradient-to-t from-amber-500 via-amber-300 to-white rounded-full shadow-[0_0_15px_#F59E0B] mb-0.5"
+                      className="w-4 sm:w-5 h-6 sm:h-7 bg-gradient-to-t from-amber-500 via-amber-300 to-white rounded-full shadow-[0_0_15px_#F59E0B] mb-0.5"
                     />
                   )}
-                  <div className="w-2.5 h-10 bg-gradient-to-b from-amber-100 via-rose-300 to-rose-400 rounded-t-sm shadow-md border-x border-amber-200/40" />
+                  <div className="w-2 sm:w-2.5 h-8 sm:h-10 bg-gradient-to-b from-amber-100 via-rose-300 to-rose-400 rounded-t-sm shadow-md border-x border-amber-200/40" />
                 </div>
               ))}
             </div>
@@ -120,36 +120,36 @@ export const WishScene: React.FC<WishSceneProps> = () => {
             <div className="relative flex flex-col items-center">
               
               {/* TOP TIER */}
-              <div className="w-48 sm:w-56 h-16 sm:h-20 bg-gradient-to-r from-[#FCE7F3] via-[#FBCFE8] to-[#FCE7F3] rounded-t-2xl border-t-2 border-amber-200/60 shadow-md relative overflow-hidden flex items-center justify-center">
-                <div className="absolute top-0 inset-x-0 h-4 bg-white/90 rounded-b-xl shadow-sm" />
-                <span className="text-sm font-handwritten text-rose-700 font-bold tracking-wide relative z-10">
+              <div className="w-40 sm:w-56 h-14 sm:h-20 bg-gradient-to-r from-[#FCE7F3] via-[#FBCFE8] to-[#FCE7F3] rounded-t-2xl border-t-2 border-amber-200/60 shadow-md relative overflow-hidden flex items-center justify-center">
+                <div className="absolute top-0 inset-x-0 h-3 sm:h-4 bg-white/90 rounded-b-xl shadow-sm" />
+                <span className="text-xs sm:text-sm font-handwritten text-rose-700 font-bold tracking-wide relative z-10">
                   Happy Birthday Kai ✨
                 </span>
               </div>
 
               {/* MIDDLE TIER */}
-              <div className="w-64 sm:w-76 h-20 sm:h-24 bg-gradient-to-r from-[#F3E7D3] via-[#FFF9F0] to-[#F3E7D3] border-t-4 border-rose-300/60 shadow-lg relative flex items-center justify-around px-4">
-                <div className="absolute top-1 inset-x-0 flex justify-between px-3">
+              <div className="w-56 sm:w-76 h-18 sm:h-24 bg-gradient-to-r from-[#F3E7D3] via-[#FFF9F0] to-[#F3E7D3] border-t-4 border-rose-300/60 shadow-lg relative flex items-center justify-around px-3 sm:px-4">
+                <div className="absolute top-1 inset-x-0 flex justify-between px-2 sm:px-3">
                   {[...Array(9)].map((_, i) => (
-                    <span key={i} className="w-2.5 h-2.5 bg-rose-300 rounded-full shadow-inner" />
+                    <span key={i} className="w-2 sm:w-2.5 h-2 sm:h-2.5 bg-rose-300 rounded-full shadow-inner" />
                   ))}
                 </div>
-                <span className="text-xl">🍓</span>
-                <span className="text-sm font-mono tracking-widest text-slate-800 font-bold uppercase bg-amber-100/80 px-3 py-1 rounded-full shadow-sm">
+                <span className="text-base sm:text-xl">🍓</span>
+                <span className="text-xs sm:text-sm font-mono tracking-widest text-slate-800 font-bold uppercase bg-amber-100/80 px-2.5 sm:px-3 py-1 rounded-full shadow-sm">
                   20 AUGUST
                 </span>
-                <span className="text-xl">🍓</span>
+                <span className="text-base sm:text-xl">🍓</span>
               </div>
 
               {/* BOTTOM TIER */}
-              <div className="w-80 sm:w-96 h-24 sm:h-28 bg-gradient-to-r from-[#EFC6C2] via-[#DFA7A5] to-[#EFC6C2] rounded-b-2xl border-t-4 border-amber-300/80 shadow-2xl relative flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-x-0 bottom-2 text-center text-xs font-mono tracking-widest text-rose-900/80 uppercase font-bold">
+              <div className="w-72 sm:w-96 h-20 sm:h-28 bg-gradient-to-r from-[#EFC6C2] via-[#DFA7A5] to-[#EFC6C2] rounded-b-2xl border-t-4 border-amber-300/80 shadow-2xl relative flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-x-0 bottom-2 text-center text-[10px] sm:text-xs font-mono tracking-widest text-rose-900/80 uppercase font-bold">
                   ★ CELEBRATING KAI ★
                 </div>
               </div>
 
               {/* CAKE STAND BASE */}
-              <div className="w-96 sm:w-[420px] h-6 bg-gradient-to-r from-amber-300 via-amber-100 to-amber-300 rounded-full shadow-2xl border-t border-white/50 -mt-1" />
+              <div className="w-80 sm:w-[420px] h-5 sm:h-6 bg-gradient-to-r from-amber-300 via-amber-100 to-amber-300 rounded-full shadow-2xl border-t border-white/50 -mt-1" />
             </div>
 
           </div>
@@ -161,9 +161,9 @@ export const WishScene: React.FC<WishSceneProps> = () => {
             <div className="pt-4">
               <button
                 onClick={handleBlowOut}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 hover:from-amber-200 hover:to-amber-300 text-slate-950 font-extrabold px-9 py-4 rounded-full text-base sm:text-lg transition-all shadow-2xl hover:scale-108 border border-amber-100/50 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-300 hover:from-amber-200 hover:to-amber-300 text-slate-950 font-extrabold px-7 sm:px-9 py-3.5 sm:py-4 rounded-full text-sm sm:text-lg transition-all shadow-2xl hover:scale-108 border border-amber-100/50 cursor-pointer"
               >
-                <Flame className="w-5 h-5 text-amber-900 fill-amber-900 animate-pulse" />
+                <Flame className="w-4 sm:w-5 h-4 sm:h-5 text-amber-900 fill-amber-900 animate-pulse" />
                 <span>🕯️ Blow out the candles</span>
               </button>
             </div>
@@ -179,7 +179,7 @@ export const WishScene: React.FC<WishSceneProps> = () => {
               <Sparkles className="w-3.5 h-3.5 text-amber-300" /> WISH MADE!
             </div>
 
-            <h1 className="text-4xl sm:text-7xl font-extrabold font-serif text-amber-100 drop-shadow-2xl">
+            <h1 className="text-3xl sm:text-7xl font-extrabold font-serif text-amber-100 drop-shadow-2xl">
               HAPPY BIRTHDAY, KAI!!! 🎂🎉
             </h1>
 
