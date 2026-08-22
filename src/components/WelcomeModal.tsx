@@ -24,22 +24,28 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
     const targetHour24 = 5;
     const targetMin = 0;
 
-    // Fast sequential minute-by-minute step interval (1.2ms per minute)
-    // This ensures EVERY SINGLE MINUTE (3:00 -> 2:59 -> 2:58 -> 2:57...) is hit sequentially without skipping!
+    // Blazing fast sequential rewind ticker (~0.3ms per step, stepping 2 minutes per tick for ultra-fast motion)
     const interval = setInterval(() => {
-      // Check if target reached
-      if (currentDay === targetDay && currentHour24 === targetHour24 && currentMin === targetMin) {
+      // Check if target reached or passed
+      if (
+        (currentDay < targetDay) ||
+        (currentDay === targetDay && currentHour24 < targetHour24) ||
+        (currentDay === targetDay && currentHour24 === targetHour24 && currentMin <= targetMin)
+      ) {
         clearInterval(interval);
+        setDisplayDate(targetDay);
+        setDisplayHour24(targetHour24);
+        setDisplayMinute(targetMin);
         setTimeout(() => {
           setTimeTravelState('complete');
-        }, 600);
+        }, 400);
         return;
       }
 
-      // Decrement by exactly 1 minute
-      currentMin--;
+      // Step back 2 minutes per fast tick
+      currentMin -= 2;
       if (currentMin < 0) {
-        currentMin = 59;
+        currentMin += 60;
         currentHour24--;
         if (currentHour24 < 0) {
           currentHour24 = 23;
@@ -50,7 +56,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
       setDisplayDate(currentDay);
       setDisplayHour24(currentHour24);
       setDisplayMinute(currentMin);
-    }, 1.2);
+    }, 0.3);
 
     return () => clearInterval(interval);
   }, []);
@@ -85,7 +91,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
 
       <AnimatePresence mode="wait">
         {timeTravelState === 'rewinding' ? (
-          /* STEP 1: SEQUENTIAL MINUTE-BY-MINUTE TIME REWIND (3:00 -> 2:59 -> 2:58...) */
+          /* STEP 1: BLAZING FAST TIME TRAVEL REWIND */
           <motion.div
             key="time-travel"
             initial={{ scale: 0.85, opacity: 0 }}
@@ -108,7 +114,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
               </div>
 
               <div className="flex items-center justify-center gap-2 text-amber-300 font-mono text-4xl sm:text-5xl font-extrabold tracking-wider">
-                <Clock className="w-7 h-7 text-amber-400 animate-spin" style={{ animationDuration: '1s' }} />
+                <Clock className="w-7 h-7 text-amber-400 animate-spin" style={{ animationDuration: '0.8s' }} />
                 <span className="drop-shadow-[0_0_15px_rgba(251,191,36,0.7)] font-mono">
                   {displayTimeString}
                 </span>
