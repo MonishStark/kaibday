@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Sparkles, Heart, Clock, Calendar, Rewind } from 'lucide-react';
 import { soundFx } from '../utils/sound';
@@ -9,55 +9,60 @@ interface WelcomeModalProps {
 
 export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
   const [timeTravelState, setTimeTravelState] = useState<'rewinding' | 'complete'>('rewinding');
-  const [currentDate, setCurrentDate] = useState(22);
-  const [currentTimeText, setCurrentTimeText] = useState('03:00 PM');
+  const [displayDate, setDisplayDate] = useState(22);
+  const [displayTimeString, setDisplayTimeString] = useState('03:00 PM');
 
   useEffect(() => {
-    // Time travel countdown sequence:
-    // 0ms: 22 August 03:00 PM
-    // 600ms: 22 August 11:30 AM
-    // 1200ms: 21 August 07:00 PM
-    // 1800ms: 21 August 10:00 AM
-    // 2400ms: 20 August 07:00 AM
-    // 2800ms: 20 August 05:00 AM (Target Reached!)
+    // Total Minutes from Start of August:
+    // Aug 22, 03:00 PM (15:00) = (22 * 24 + 15) * 60 = 32,580 minutes
+    // Aug 20, 05:00 AM (05:00) = (20 * 24 + 5) * 60 = 29,100 minutes
+    const startMinutes = (22 * 24 + 15) * 60; // 32,580
+    const endMinutes = (20 * 24 + 5) * 60;     // 29,100
+    const durationMs = 3800; // 3.8 seconds continuous 60FPS rewind
+    const startTime = performance.now();
 
-    const timer1 = setTimeout(() => {
-      setCurrentDate(22);
-      setCurrentTimeText('11:30 AM');
-    }, 600);
+    let animFrameId: number;
 
-    const timer2 = setTimeout(() => {
-      setCurrentDate(21);
-      setCurrentTimeText('07:00 PM');
-    }, 1200);
+    const animateRewind = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / durationMs);
 
-    const timer3 = setTimeout(() => {
-      setCurrentDate(21);
-      setCurrentTimeText('10:00 AM');
-    }, 1800);
+      // Smooth ease-in-out curve for time warp feeling
+      const easeProgress = progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-    const timer4 = setTimeout(() => {
-      setCurrentDate(20);
-      setCurrentTimeText('07:00 AM');
-    }, 2400);
+      const currentTotalMin = Math.round(startMinutes - easeProgress * (startMinutes - endMinutes));
 
-    const timer5 = setTimeout(() => {
-      setCurrentDate(20);
-      setCurrentTimeText('05:00 AM');
-    }, 2800);
+      // Calculate Day, Hour, Minute, AM/PM
+      const totalHours = Math.floor(currentTotalMin / 60);
+      const min = currentTotalMin % 60;
+      const day = Math.floor(totalHours / 24);
+      const hour24 = totalHours % 24;
 
-    const timer6 = setTimeout(() => {
-      setTimeTravelState('complete');
-    }, 3400);
+      const ampm = hour24 >= 12 ? 'PM' : 'AM';
+      const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
 
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
-      clearTimeout(timer5);
-      clearTimeout(timer6);
+      const formattedHour = hour12.toString().padStart(2, '0');
+      const formattedMin = min.toString().padStart(2, '0');
+
+      setDisplayDate(day);
+      setDisplayTimeString(`${formattedHour}:${formattedMin} ${ampm}`);
+
+      if (progress < 1) {
+        animFrameId = requestAnimationFrame(animateRewind);
+      } else {
+        // Lock at target: 20 August 05:00 AM
+        setDisplayDate(20);
+        setDisplayTimeString('05:00 AM');
+        setTimeout(() => {
+          setTimeTravelState('complete');
+        }, 500);
+      }
     };
+
+    animFrameId = requestAnimationFrame(animateRewind);
+    return () => cancelAnimationFrame(animFrameId);
   }, []);
 
   const handleOpenCard = () => {
@@ -83,7 +88,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
 
       <AnimatePresence mode="wait">
         {timeTravelState === 'rewinding' ? (
-          /* STEP 1: TIME TRAVEL REWIND ANIMATION */
+          /* STEP 1: ULTRA-SMOOTH CONTINUOUS 60FPS TIME TRAVEL REWIND */
           <motion.div
             key="time-travel"
             initial={{ scale: 0.85, opacity: 0 }}
@@ -97,34 +102,24 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
             </div>
 
             {/* Glowing Retro Digital Clock Display */}
-            <div className="py-6 px-4 bg-black/60 rounded-2xl border border-amber-300/30 shadow-inner space-y-3">
+            <div className="py-6 px-4 bg-black/70 rounded-2xl border border-amber-300/40 shadow-inner space-y-3">
               <div className="flex items-center justify-center gap-2 text-rose-400 font-mono text-sm font-bold tracking-widest uppercase">
                 <Calendar className="w-4 h-4 text-rose-400" />
-                <motion.span
-                  key={currentDate}
-                  initial={{ y: -10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  className="text-lg font-extrabold text-rose-300"
-                >
-                  {currentDate} AUGUST
-                </motion.span>
+                <span className="text-xl font-extrabold text-rose-300 font-mono tracking-wider">
+                  {displayDate} AUGUST
+                </span>
               </div>
 
-              <div className="flex items-center justify-center gap-2 text-amber-300 font-mono text-3xl sm:text-4xl font-extrabold tracking-wider">
-                <Clock className="w-6 h-6 text-amber-400 animate-spin" style={{ animationDuration: '3s' }} />
-                <motion.span
-                  key={currentTimeText}
-                  initial={{ scale: 1.3, opacity: 0.3 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  className="drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]"
-                >
-                  {currentTimeText}
-                </motion.span>
+              <div className="flex items-center justify-center gap-2 text-amber-300 font-mono text-4xl sm:text-5xl font-extrabold tracking-wider">
+                <Clock className="w-7 h-7 text-amber-400 animate-spin" style={{ animationDuration: '1.5s' }} />
+                <span className="drop-shadow-[0_0_15px_rgba(251,191,36,0.7)] font-mono">
+                  {displayTimeString}
+                </span>
               </div>
             </div>
 
             <p className="text-xs font-serif italic text-amber-200/70">
-              Traveling back to Kai's Birthday morning... ⏳✨
+              Rewinding to 20 August • 05:00 AM... ⏳✨
             </p>
           </motion.div>
         ) : (
