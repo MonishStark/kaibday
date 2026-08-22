@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Sparkles, Heart, Clock, Calendar, Rewind } from 'lucide-react';
 import { soundFx } from '../utils/sound';
@@ -10,59 +10,49 @@ interface WelcomeModalProps {
 export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
   const [timeTravelState, setTimeTravelState] = useState<'rewinding' | 'complete'>('rewinding');
   const [displayDate, setDisplayDate] = useState(22);
-  const [displayTimeString, setDisplayTimeString] = useState('03:00 PM');
+  const [displayHour24, setDisplayHour24] = useState(15); // 15 = 03:00 PM
+  const [displayMinute, setDisplayMinute] = useState(0);
 
   useEffect(() => {
-    // Total Minutes from Start of August:
-    // Aug 22, 03:00 PM (15:00) = (22 * 24 + 15) * 60 = 32,580 minutes
-    // Aug 20, 05:00 AM (05:00) = (20 * 24 + 5) * 60 = 29,100 minutes
-    const startMinutes = (22 * 24 + 15) * 60; // 32,580
-    const endMinutes = (20 * 24 + 5) * 60;     // 29,100
-    const durationMs = 3800; // 3.8 seconds continuous 60FPS rewind
-    const startTime = performance.now();
+    // Start at: 22 August, 15:00 (03:00 PM)
+    // Target at: 20 August, 05:00 (05:00 AM)
+    let currentDay = 22;
+    let currentHour24 = 15;
+    let currentMin = 0;
 
-    let animFrameId: number;
+    const targetDay = 20;
+    const targetHour24 = 5;
+    const targetMin = 0;
 
-    const animateRewind = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(1, elapsed / durationMs);
-
-      // Smooth ease-in-out curve for time warp feeling
-      const easeProgress = progress < 0.5
-        ? 2 * progress * progress
-        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-      const currentTotalMin = Math.round(startMinutes - easeProgress * (startMinutes - endMinutes));
-
-      // Calculate Day, Hour, Minute, AM/PM
-      const totalHours = Math.floor(currentTotalMin / 60);
-      const min = currentTotalMin % 60;
-      const day = Math.floor(totalHours / 24);
-      const hour24 = totalHours % 24;
-
-      const ampm = hour24 >= 12 ? 'PM' : 'AM';
-      const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12;
-
-      const formattedHour = hour12.toString().padStart(2, '0');
-      const formattedMin = min.toString().padStart(2, '0');
-
-      setDisplayDate(day);
-      setDisplayTimeString(`${formattedHour}:${formattedMin} ${ampm}`);
-
-      if (progress < 1) {
-        animFrameId = requestAnimationFrame(animateRewind);
-      } else {
-        // Lock at target: 20 August 05:00 AM
-        setDisplayDate(20);
-        setDisplayTimeString('05:00 AM');
+    // Fast sequential minute-by-minute step interval (1.2ms per minute)
+    // This ensures EVERY SINGLE MINUTE (3:00 -> 2:59 -> 2:58 -> 2:57...) is hit sequentially without skipping!
+    const interval = setInterval(() => {
+      // Check if target reached
+      if (currentDay === targetDay && currentHour24 === targetHour24 && currentMin === targetMin) {
+        clearInterval(interval);
         setTimeout(() => {
           setTimeTravelState('complete');
-        }, 500);
+        }, 600);
+        return;
       }
-    };
 
-    animFrameId = requestAnimationFrame(animateRewind);
-    return () => cancelAnimationFrame(animFrameId);
+      // Decrement by exactly 1 minute
+      currentMin--;
+      if (currentMin < 0) {
+        currentMin = 59;
+        currentHour24--;
+        if (currentHour24 < 0) {
+          currentHour24 = 23;
+          currentDay--;
+        }
+      }
+
+      setDisplayDate(currentDay);
+      setDisplayHour24(currentHour24);
+      setDisplayMinute(currentMin);
+    }, 1.2);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleOpenCard = () => {
@@ -70,6 +60,13 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
     soundFx.restartBirthdaySong();
     onOpen();
   };
+
+  // Format Display Values
+  const ampm = displayHour24 >= 12 ? 'PM' : 'AM';
+  const hour12 = displayHour24 % 12 === 0 ? 12 : displayHour24 % 12;
+  const formattedHour = hour12.toString().padStart(2, '0');
+  const formattedMin = displayMinute.toString().padStart(2, '0');
+  const displayTimeString = `${formattedHour}:${formattedMin} ${ampm}`;
 
   return (
     <motion.div
@@ -88,7 +85,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
 
       <AnimatePresence mode="wait">
         {timeTravelState === 'rewinding' ? (
-          /* STEP 1: ULTRA-SMOOTH CONTINUOUS 60FPS TIME TRAVEL REWIND */
+          /* STEP 1: SEQUENTIAL MINUTE-BY-MINUTE TIME REWIND (3:00 -> 2:59 -> 2:58...) */
           <motion.div
             key="time-travel"
             initial={{ scale: 0.85, opacity: 0 }}
@@ -111,7 +108,7 @@ export const WelcomeModal: React.FC<WelcomeModalProps> = ({ onOpen }) => {
               </div>
 
               <div className="flex items-center justify-center gap-2 text-amber-300 font-mono text-4xl sm:text-5xl font-extrabold tracking-wider">
-                <Clock className="w-7 h-7 text-amber-400 animate-spin" style={{ animationDuration: '1.5s' }} />
+                <Clock className="w-7 h-7 text-amber-400 animate-spin" style={{ animationDuration: '1s' }} />
                 <span className="drop-shadow-[0_0_15px_rgba(251,191,36,0.7)] font-mono">
                   {displayTimeString}
                 </span>
